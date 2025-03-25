@@ -16,8 +16,6 @@ const authRouter = require("./src/auth/auth.router");
 app.use('/auth', authRouter);
 app.use('/employee', empRouter);
 
-
-
 const port = process.env.PORT || 5002;
 app.listen(port, () => {
     console.log("Hello server");
