@@ -16,5 +16,7 @@ client.connect(function (err) {
 });
 
 
-
+module.exports = {
+    pool: client
+  }
 
