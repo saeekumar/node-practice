@@ -12,7 +12,7 @@ const client = new Client({
 })
 client.connect(function (err) {
   if (err) throw err;
-  console.log(process.env.DATABASE_USERNAME,"DB Connected!");
+  console.log("DB Connected!");
 });
 
 
