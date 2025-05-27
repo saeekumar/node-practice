@@ -17,10 +17,10 @@ module.exports = {
     },
 
     updateEmployee: async (data, callBack) => {
-        const { first_name, last_name, email_id, phone } = data
+        const { first_name, last_name, email_id, phone,id } = data
         pool.query(
-            `UPDATE employees SET first_name=$1, last_name=$2,email_id=$3,phone=$4 RETURNING id`,
-            [first_name, last_name, email_id, phone],
+            `UPDATE employees SET first_name=$1, last_name=$2,email_id=$3,phone=$4 WHERE id=$5 RETURNING id`,
+            [first_name, last_name, email_id, phone,id],
             (error, results, fields) => {
                 if (error) {
                     return callBack(error);
