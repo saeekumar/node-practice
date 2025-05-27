@@ -28,7 +28,7 @@ module.exports = {
     updateEmployee: async (req, res) => {
 
         let data = req.body;
-        if (!data.first_name || !data.email_id || !data.phone) {
+        if (!data.first_name || !data.email_id || !data.phone|| !data.id) {
             return sendResponse(res, false, 400, "Please fill mandatory fields", []);
         }
 
@@ -36,7 +36,8 @@ module.exports = {
             first_name: data?.first_name,
             last_name: data?.last_name,
             email_id: data?.email_id,
-            phone: data?.phone
+            phone: data?.phone,
+            id:data?.id 
         };
         updateEmployee(payload, (err, results) => {
             if (err) {
